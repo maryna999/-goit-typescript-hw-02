@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Toaster, toast } from "react-hot-toast";
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 import "./App.css";
 import SearchBar from "./SearchBar/SearchBar";
 import ImageGallery from "./ImageGallery/ImageGallery";
@@ -23,16 +23,18 @@ function App() {
 
   useEffect(() => {
     if (!query) return;
-    const fetchImages = async () => {
+
+    const fetchImages = async (): Promise<void> => {
       setLoading(true);
       try {
-        const response = await axios.get(
+        const response: AxiosResponse<{ results: Image[] }> = await axios.get(
           "https://api.unsplash.com/search/photos",
           {
             params: { query, page, per_page: 12 },
             headers: { Authorization: `Client-ID ${ACCESS_KEY}` },
           }
         );
+
         if (response.status === 200) {
           setImages((prevImages) => [...prevImages, ...response.data.results]);
           setError(response.data.results.length === 0 ? "No matches!" : null);
@@ -46,6 +48,7 @@ function App() {
         setLoading(false);
       }
     };
+
     fetchImages();
   }, [query, page]);
 
