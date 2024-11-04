@@ -8,15 +8,7 @@ import Loader from "./Loader/Loader";
 import ErrorMessage from "./ErrorMessage/ErrorMessage";
 import LoadMoreBtn from "./LoadMoreBtn/LoadMoreBtn";
 import ImageModal from "./ImageModal/ImageModal";
-
-interface Image {
-  id: string;
-  urls: { regular: string; small: string };
-  alt_description: string;
-  description?: string;
-  user: { name: string };
-  likes: number;
-}
+import { Image } from "./types";
 
 const ACCESS_KEY = "mMueF4vZES8_6_LOygFSEGCH1au8JLc8l-D6eG2gT1g";
 

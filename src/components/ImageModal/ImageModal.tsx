@@ -1,14 +1,7 @@
 import React, { useEffect } from "react";
 import Modal from "react-modal";
 import s from "./ImageModal.module.css";
-
-interface Image {
-  urls: { regular: string };
-  alt_description: string;
-  description?: string;
-  user: { name: string };
-  likes: number;
-}
+import { Image } from "../types";
 
 interface ImageModalProps {
   isOpen: boolean;

@@ -1,5 +1,5 @@
 {
-  "name": "goit-react-hw-04",
+  "name": "goit-typescript-hw-02",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -22,6 +22,7 @@
     "@eslint/js": "^9.9.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
+    "@types/react-modal": "^3.16.3",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "eslint": "^9.9.0",
     "eslint-plugin-react": "^7.35.0",
